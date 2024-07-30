@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const errorHandler = require("./src/middleware/errorHandler");
 const router = require("./src/routes");
@@ -6,6 +7,12 @@ const router = require("./src/routes");
 const createError = require("http-errors");
 
 const app = express();
+const corsOptions = {
+  origin: ["http://localhost:3000"],
+  methods: ["POST", "PATCH", "PUT", "GET"],
+  maxAge: 3600,
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
