@@ -8,7 +8,7 @@ const createError = require("http-errors");
 
 const app = express();
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://user-log.netlify.app"],
   methods: ["POST", "PATCH", "PUT", "GET"],
   maxAge: 3600,
 };
